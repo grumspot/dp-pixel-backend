@@ -1,53 +1,48 @@
 {
-	"name": "dp-pixel-backend",
-	"version": "0.0.0",
-	"description": "DynamicPricing AI Pixel Backend",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/grumspot/dp-pixel-backend"
-	},
-	"license": "MIT",
-	"author": {
-		"email": "delyan.peev@gmail.com"
-	},
-	"type": "module",
-	"main": "./lib/index.js",
-	"files": [
-		"lib/",
-		"package.json",
-		"LICENSE.md",
-		"README.md"
-	],
-	"scripts": {
-		"build": "tsup",
-		"format": "prettier .",
-		"lint": "eslint . --max-warnings 0",
-		"prepare": "husky",
-		"tsc": "tsc"
-	},
-	"lint-staged": {
-		"*": "prettier --ignore-unknown --write"
-	},
-	"devDependencies": {
-		"@eslint/js": "^9.14.0",
-		"@types/eslint__js": "^8.42.3",
-		"@types/node": "^22.9.0",
-		"eslint": "^9.14.0",
-		"eslint-plugin-n": "^17.13.1",
-		"husky": "^9.1.6",
-		"lint-staged": "^15.2.10",
-		"prettier": "^3.3.3",
-		"prettier-plugin-curly": "^0.3.1",
-		"prettier-plugin-packagejson": "^2.5.3",
-		"prettier-plugin-sh": "^0.14.0",
-		"tsup": "^8.3.5",
-		"typescript": "^5.6.3",
-		"typescript-eslint": "^8.13.0"
-	},
-	"engines": {
-		"node": ">=18.3.0"
-	},
-	"publishConfig": {
-		"provenance": true
-	}
+  "name": "dp-pixel-backend",
+  "version": "1.0.0",
+  "description": "DynamicPricing AI Pixel Backend",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grumspot/dp-pixel-backend"
+  },
+  "type": "module",
+  "scripts": {
+    "format": "prettier .",
+    "lint": "eslint . --max-warnings 0",
+    "tsc": "tsc",
+    "build:watch": "rm -rf build ; tsc --watch",
+    "dev": "nodemon build/server.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.687.0",
+    "@aws-sdk/lib-dynamodb": "^3.687.0",
+    "@fastify/autoload": "^6.0.2",
+    "@fastify/type-provider-typebox": "^5.0.1",
+    "@sinclair/typebox": "^0.33.22",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "fastify": "^5.1.0",
+    "node-cache": "^5.1.2",
+    "pino": "^9.5.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.9.0",
+    "@types/node-cache": "^4.2.5",
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "fastify-tsconfig": "^2.0.0",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=18.3.0"
+  },
+  "publishConfig": {
+    "provenance": true
+  }
 }
