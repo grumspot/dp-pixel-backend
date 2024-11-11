@@ -1,0 +1,53 @@
+{
+	"name": "dp-pixel-backend",
+	"version": "0.0.0",
+	"description": "DynamicPricing AI Pixel Backend",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/grumspot/dp-pixel-backend"
+	},
+	"license": "MIT",
+	"author": {
+		"email": "delyan.peev@gmail.com"
+	},
+	"type": "module",
+	"main": "./lib/index.js",
+	"files": [
+		"lib/",
+		"package.json",
+		"LICENSE.md",
+		"README.md"
+	],
+	"scripts": {
+		"build": "tsup",
+		"format": "prettier .",
+		"lint": "eslint . --max-warnings 0",
+		"prepare": "husky",
+		"tsc": "tsc"
+	},
+	"lint-staged": {
+		"*": "prettier --ignore-unknown --write"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.14.0",
+		"@types/eslint__js": "^8.42.3",
+		"@types/node": "^22.9.0",
+		"eslint": "^9.14.0",
+		"eslint-plugin-n": "^17.13.1",
+		"husky": "^9.1.6",
+		"lint-staged": "^15.2.10",
+		"prettier": "^3.3.3",
+		"prettier-plugin-curly": "^0.3.1",
+		"prettier-plugin-packagejson": "^2.5.3",
+		"prettier-plugin-sh": "^0.14.0",
+		"tsup": "^8.3.5",
+		"typescript": "^5.6.3",
+		"typescript-eslint": "^8.13.0"
+	},
+	"engines": {
+		"node": ">=18.3.0"
+	},
+	"publishConfig": {
+		"provenance": true
+	}
+}
