@@ -11,6 +11,7 @@ const envSchema = Type.Object({
   AWS_SECRET_ACCESS_KEY: Type.String(),
   DYNAMIC_PRICING_API_HOST: Type.String(),
   DYNAMIC_PRICING_API_KEY: Type.String(),
+  PORT: Type.Optional(Type.String()),
 });
 
 export const config = {

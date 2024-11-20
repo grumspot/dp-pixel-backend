@@ -8,11 +8,12 @@
   },
   "type": "module",
   "scripts": {
-    "format": "prettier .",
-    "lint": "eslint . --max-warnings 0",
-    "tsc": "tsc",
+    "dev": "nodemon build/server.js",
+    "build:": "------------- Build -------------",
+    "build": "tsc",
     "build:watch": "rm -rf build ; tsc --watch",
-    "dev": "nodemon build/server.js"
+    "docker:": "------------- Docker -------------",
+    "docker:run": "node build/server.js"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.687.0",
