@@ -1,4 +1,5 @@
 import { PutCommand } from "@aws-sdk/lib-dynamodb";
+import fastifyCors from "@fastify/cors";
 import {
   FastifyPluginAsyncTypebox,
   Type,
@@ -8,6 +9,11 @@ import { dynamoDb } from "../clients/dynamo-client.js";
 import { config } from "../config.js";
 
 const products: FastifyPluginAsyncTypebox = async (fastify) => {
+  fastify.register(fastifyCors);
+  fastify.options("/products/view", (_, reply) => {
+    reply.status(200);
+  });
+
   fastify.post(
     "/products/view",
     {

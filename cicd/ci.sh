@@ -4,7 +4,7 @@ set -e
 
 PROJECT_PATH=${PROJECT_PATH:-$(dirname $PWD)}
 GIT_COMMIT_HASH=$(git rev-parse HEAD)
-IMAGE_NAME="dynamicpricing-pixel-backend"
+IMAGE_NAME=${IMAGE_NAME:-dynamicpricing-pixel-backend}
 IMAGE_TAG="$IMAGE_NAME:$GIT_COMMIT_HASH"
 
 function build_docker_image() {
