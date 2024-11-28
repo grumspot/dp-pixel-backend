@@ -38,7 +38,7 @@ const products: FastifyPluginAsyncTypebox = async (fastify) => {
             Item: {
               shop,
               variantId,
-              timestamp: new Date().toISOString(),
+              timestamp: new Date().getTime(),
             },
             TableName: config.env.DYNAMODB_TABLE_NAME,
           })
